@@ -1,89 +1,71 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Bookshelf Apps</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Layout Kolom</title>
+<script src="https://kit.fontawesome.com/bf5f902c48.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="head_bar">
-  <h1 class="head_bar__title">Bookshelf Apps</h1>
-</header>
-<main>
-  <section class="input_section">
-    <h2>Masukkan Buku Baru</h2>
-    <form id="inputBook">
-      <div class="input">
-        <label for="inputBookTitle">Judul</label>
-        <input id="inputBookTitle" type="text" required>
-      </div>
-      <div class="input">
-        <label for="inputBookAuthor">Penulis</label>
-        <input id="inputBookAuthor" type="text" required>
-      </div>
-      <div class="input">
-        <label for="inputBookYear">Tahun</label>
-        <input id="inputBookYear" type="number" required>
-      </div>
-      <div class="input_inline">
-        <label for="inputBookIsComplete">Selesai dibaca</label>
-        <input id="inputBookIsComplete" type="checkbox">
-      </div>
-      <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span>Belum selesai dibaca</span></button>
-    </form>
-  </section>
-  
-  <section class="search_section">
-    <h2>Cari Buku (Opsional)</h2>
-    <form id="searchBook">
-      <label for="searchBookTitle">Judul</label>
-      <input id="searchBookTitle" type="text">
-      <button id="searchSubmit" type="submit">Cari</button>
-    </form>
-  </section>
-  
-  <section class="book_shelf">
-    <h2>Belum selesai dibaca</h2>
-    
-    <div id="incompleteBookshelfList" class="book_list">
-<!--      <article class="book_item">-->
-<!--        <h3>Book Title</h3>-->
-<!--        <p>Penulis: John Doe</p>-->
-<!--        <p>Tahun: 2002</p>-->
-<!--    -->
-<!--        <div class="action">-->
-<!--          <button class="green">Selesai dibaca</button>-->
-<!--          <button class="red">Hapus buku</button>-->
-<!--        </div>-->
-<!--      </article>-->
+  <div class="title"><h2>Book Shelf</h2></div>
+    <div class="container">
+        <div class="column">
+          <form action="">
+            <h2>Masukan Buku Baru</h2>
+            <label for="name">Judul</label>
+            <input type="text">
+            <label for="name">Penulis</label>
+            <input type="text" name="" id="">
+            <label for="name">Tahun</label>
+            <input type="text">
+            <div> 
+             <label for="">Selesai dibaca</label>
+            <input type="checkbox" name="" id="">
+           </div>
+          <button type="submit">Masukan Buku ke Rak <span>Belum Selesai Dibaca</span></button>
+          </form>
+        </div>
+        <div class="column column2 ">
+          <h3>Belum Selesai Dibaca</h3>
+          <div class="card">
+            <h4>Judul buku</h4>
+            <p>Penulis: Waduh</p>
+            <p>Tahun : 2023</p>
+            <i class="fa-solid fa-square-check"></i>
+            <i class="fa-solid fa-pen-to-square"></i>
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        
+        </div>   
+        <!-- Second Column -->
+        <div class="column column2 column3">
+          <h3>Sudah Selesai Dibaca</h3>
+          <div class="card">
+            <h4>Judul buku</h4>
+            <p>Penulis: Waduh</p>
+            <p>Tahun : 2023</p>
+            <i class="fa-solid fa-square-xmark"></i>
+            <i class="fa-solid fa-pen-to-square"></i>
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </div> 
+        </div> <!-- Third Column -->
     </div>
-  </section>
-  
-  <section class="book_shelf">
-    <h2>Selesai dibaca</h2>
-    
-    <div id="completeBookshelfList" class="book_list">
-<!--      <article class="book_item">-->
-<!--        <h3>Book Title</h3>-->
-<!--        <p>Penulis: John Doe</p>-->
-<!--        <p>Tahun: 2002</p>-->
-<!--        -->
-<!--        <div class="action">-->
-<!--          <button class="green">Belum selesai di Baca</button>-->
-<!--          <button class="red">Hapus buku</button>-->
-<!--        </div>-->
-<!--      </article>-->
+    <div class="containerSecondColumn">
+        <div class="secondColumn">
+            <input type="text">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div>
+        <div class="card">
+          <h4>Judul buku</h4>
+          <p>Penulis: Waduh</p>
+          <p>Tahun : 2023</p>
+          <p>Sudah dibaca</p>
+        </div>
     </div>
-  </section>
-</main>
-
-<script src="main.js"></script>
-
+  </div>
 </body>
 </html>
