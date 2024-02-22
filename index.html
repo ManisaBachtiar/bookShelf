@@ -1,73 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Book Shelf</title>
-    <script src="https://kit.fontawesome.com/bf5f902c48.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="header">
-        <h2>Book Shelf</h2>
-    </div>
-    <div class="main-container">
-        <div class="book-entry">
-            <form action="">
-                <h2>Input Buku Baru</h2>
-                <label for="title">Judul</label>
-                <input type="text" id="title">
-                <label for="author">Penulis</label>
-                <input type="text" id="author">
-                <label for="year">Tahun</label>
-                <input type="text" id="year">
-                <div class="checkbox">
-                    <label for="read">Selesai dibaca</label>
-                    <input type="checkbox" id="read">
-                </div>
-                <button type="submit">Tambahkan Buku ke Rak <span>Belum Selesai Dibaca</span></button>
-            </form>
-        </div>
-        <div class="books-container">
-            <div class="book-list undone">
-                <h3>Belum Selesai Dibaca</h3>
-                <div class="book-card">
-                    <h4>Judul buku</h4>
-                    <p>Penulis: Waduh</p>
-                    <p>Tahun: 2023</p>
-                    <i class="fas fa-check-square"></i>
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash"></i>
-                </div>
-            </div>
-            <div class="book-list done">
-                <h3>Sudah Selesai Dibaca</h3>
-                <div class="book-card">
-                    <h4>Judul buku</h4>
-                    <p>Penulis: Waduh</p>
-                    <p>Tahun: 2023</p>
-                    <i class="fas fa-times"></i>
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash"></i>
-                </div>
-            </div>
-            <div class="book-list search">
-                     <div class="search-bar">
-                <input type="text" placeholder="Cari buku...">
-                <i class="fas fa-search"></i>
-            </div>
-              <div class="book-card">
-                  <h4>Judul buku</h4>
-                  <p>Penulis: Waduh</p>
-                  <p>Tahun: 2023</p>
-                  <i class="fas fa-times"></i>
-                  <i class="fas fa-edit"></i>
-                  <i class="fas fa-trash"></i>
-              </div>
+    <script
+      src="https://kit.fontawesome.com/bf5f902c48.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Book Shelf</h1>
+    </header>
+    <main class="main-container">
+      <section class="book-entry">
+        <form id="book_form" action="">
+          <h2>Add New Book</h2>
+          <label for="title">Title</label>
+          <input type="text" id="title" required />
+          <label for="author">Author</label>
+          <input type="text" id="author" required />
+          <label for="year">Year</label>
+          <input type="text" id="year" required />
+          <div class="checkbox">
+            <label for="read">Finished Reading</label>
+            <input type="checkbox" id="read" />
           </div>
+          <button type="submit">Add Book to Shelf</button>
+        </form>
+      </section>
+      <section class="books-container">
+        <div  class="book-list">
+          <h3>Unfinished Books</h3>
+          <div id ="unfinished-books-list"></div>
         </div>
+        <div id="done" class="book-list done">
+          <h3>Finish Books</h3>
+          <div id ="finished-books-list"></div>
         </div>
-    </div>
-</body>
+      </section>
+    </main>
+    <script src="script2.js"></script>
+  </body>
 </html>
