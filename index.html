@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Book Shelf</title>
-    <script
-      src="https://kit.fontawesome.com/bf5f902c48.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/bf5f902c48.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header class="header">
@@ -25,8 +22,8 @@
           <label for="year">Year</label>
           <input type="text" id="year" required />
           <div class="checkbox">
-            <label for="read">Finished Reading</label>
-            <input type="checkbox" id="read" />
+            <label for="read" class="checkboxRead">Finished Reading</label>
+            <input class="checkbox" type="checkbox" id="read" />
           </div>
           <button type="submit">Add Book to Shelf</button>
         </form>
@@ -40,8 +37,13 @@
           <h3>Finish Books</h3>
           <div id ="finished-books-list"></div>
         </div>
+        <div id="done" class="book-list ">
+          <h3>Finish Books</h3>
+          <div id ="finished-books-list"></div>
+        </div>
       </section>
     </main>
+    
     <script src="script2.js"></script>
   </body>
 </html>
