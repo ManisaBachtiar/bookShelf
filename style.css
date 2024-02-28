@@ -55,13 +55,19 @@
   
   .checkbox label {
     font-weight: bold;
+    margin-top: -10px;
+
   }
-  
-  
+.checkboxq{
+  margin-top: 20px;
+}
   input{
-    height: 30px;
+    margin-top: 3px;
     font-size: 16px;
     padding: 5px;
+  }
+  label{
+    margin-top: 10px;
   }
   button[type="submit"] {
     background-color: #007bff;
