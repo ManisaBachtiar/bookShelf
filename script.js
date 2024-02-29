@@ -130,7 +130,7 @@ function addBook(title, author, year, isComplete) {
 function markAsRead(bookId) {
  const book = findBook(bookId);
  if (!book) return;
- book.iscomplete = true;
+ book.isComplete = true;
  renderBooks();
  saveData();
 }
