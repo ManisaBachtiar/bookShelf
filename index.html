@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Book Shelf</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/bf5f902c48.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -20,12 +21,12 @@
           <label for="author">Author</label>
           <input type="text" id="author" required />
           <label for="year">Year</label>
-          <input type="text" id="year" required />
+          <input type="number" id="year" required />
           <div class="checkboxq">
             <label for="read">Finished Reading</label>
             <input class="checkbox" type="checkbox" id="read" />
           </div>
-          <button type="submit">Add Book to Shelf</button>
+          <button class="submit" type="submit">Add Book to Shelf</button>
         </form>
       </section>
       <section class="books-container">
@@ -37,13 +38,15 @@
           <h3>Finish Books</h3>
           <div id ="finished-books-list"></div>
         </div>
-        <div class="book-list ">
-          <h3>Searching Books</h3>
-         <input type="text" name="" id="">
-         <i class="fa-solid fa-magnifying-glass"></i>
-  
-          <div id ="finished-books-list"></div>
-        </div>
+       
+        <div class="book-list search-container">
+          <h3>Search books</h3>
+          <input type="text" id="search-input" placeholder="Search by title">
+          <button id="search-button" class="searchButton" onclick="searchBooks()"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </button>
+         </div>
+         <div id="search-results" class="book-list"></div>
+         
       </section>
     </main>
     
