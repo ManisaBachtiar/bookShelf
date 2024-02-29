@@ -5,13 +5,14 @@ function generateId() {
  return Date.now();
 }
 
-function generateBookObject(id, title, author, year, isRead) {
+function generateBookObject(id, title, author, year, isComplete) {
+   const yearNumber = Number(year);
  return {
     id,
     title,
     author,
-    year,
-    isRead,
+    year:yearNumber,
+    isComplete,
  };
 }
 
@@ -35,6 +36,7 @@ function saveData() {
  if (isStorageExist()) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(books));
     console.log("Data saved successfully.");
+    console.log(saveData)
     renderBooks();
  }
 }
@@ -74,7 +76,7 @@ function removeBook(bookId) {
 }
 
 function makeBook(bookObject) {
- const { id, title, author, year, isRead } = bookObject;
+ const { id, title, author, year, isComplete } = bookObject;
 
  const container = document.createElement("div");
  container.classList.add("book-card");
@@ -88,7 +90,7 @@ function makeBook(bookObject) {
     <div class="book-buttons">
       <button class="trash-button"><i class="fas fa-trash"></i></button>
       ${
-        isRead
+        isComplete
           ? '<button class="undo-button"><i class="fas fa-undo"></i></button>'
           : '<button class="check-button"><i class="fas fa-check"></i></button>'
       }
@@ -104,20 +106,20 @@ function makeBook(bookObject) {
     ".check-button, .undo-button"
  );
  toggleReadButton.addEventListener("click", () => {
-    isRead ? markAsUnread(id) : markAsRead(id);
+    isComplete ? markAsUnread(id) : markAsRead(id);
  });
 
  return container;
 }
 
-function addBook(title, author, year, isRead) {
+function addBook(title, author, year, isComplete) {
  const generatedID = generateId();
  const bookObject = generateBookObject(
     generatedID,
     title,
     author,
     year,
-    isRead
+    isComplete
  );
  books.push(bookObject);
 
@@ -128,7 +130,7 @@ function addBook(title, author, year, isRead) {
 function markAsRead(bookId) {
  const book = findBook(bookId);
  if (!book) return;
- book.isRead = true;
+ book.iscomplete = true;
  renderBooks();
  saveData();
 }
@@ -136,7 +138,7 @@ function markAsRead(bookId) {
 function markAsUnread(bookId) {
  const bookIndex = findBookIndex(bookId);
  if (bookIndex === -1) return;
- books[bookIndex].isRead = false;
+ books[bookIndex].isComplete = false;
  renderBooks();
  saveData();
 }
@@ -149,7 +151,7 @@ function renderBooks() {
 
  books.forEach((book) => {
     const bookElement = makeBook(book);
-    book.isRead
+    book.isComplete
       ? finishedBooksList.appendChild(bookElement)
       : unfinishedBooksList.appendChild(bookElement);
  });
@@ -162,8 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
     const year = document.getElementById("year").value;
-    const isRead = document.getElementById("read").checked;
-    addBook(title, author, year, isRead);
+    const isComplete = document.getElementById("read").checked;
+    addBook(title, author, year, isComplete);
  });
 
  if (isStorageExist()) {
@@ -192,3 +194,4 @@ function searchBooks() {
     searchResultsContainer.appendChild(bookElement);
  });
 }
+console.log(books)
